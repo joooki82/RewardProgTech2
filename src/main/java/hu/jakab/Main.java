@@ -40,6 +40,9 @@ public class Main {
 
         // Gyerekek pontszámának listázása
         rewardManager.listChildPoints();
+        rewardManager.listChildPoints();
+        rewardManager.listChildPoints();
+
     }
 
 }

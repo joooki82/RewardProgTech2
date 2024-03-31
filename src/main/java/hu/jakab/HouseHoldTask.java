@@ -11,11 +11,11 @@ public class HouseHoldTask implements Task {
         this.points = points;
     }
 
-
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+
     public int getPoints() { return points; }
     public void setPoints(int points) { this.points = points; }
 
