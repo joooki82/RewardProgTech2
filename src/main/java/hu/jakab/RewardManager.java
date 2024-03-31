@@ -1,12 +1,15 @@
 package hu.jakab;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RewardManager implements IRewardManager {
     private static RewardManager instance;
     private Map<String, Child> children = new HashMap<>();
     private Map<String, Task> tasks = new HashMap<>();
+    private Map<Child, List<Task>> assignedTasks = new HashMap<>();
 
     private RewardManager() {}
 
@@ -15,6 +18,11 @@ public class RewardManager implements IRewardManager {
             instance = new RewardManager();
         }
         return instance;
+    }
+
+    @Override
+    public void addChild(Child child) {
+        children.put(child.getName(), child);
     }
 
     @Override
@@ -27,12 +35,25 @@ public class RewardManager implements IRewardManager {
         Task task = tasks.get(taskName);
         Child child = children.get(childName);
         if (task != null && child != null) {
-            child.setPoints(task.getPoints());
+            assignedTasks.computeIfAbsent(child, k -> new ArrayList<>()).add(task);
+        }
+    }
+
+    public void calculatePointsForChild(String childName) {
+        Child child = children.get(childName);
+        if (child != null) {
+            int totalPoints = assignedTasks.getOrDefault(child, new ArrayList<>()).stream()
+                    .mapToInt(Task::getPoints)
+                    .sum();
+            child.setPoints(totalPoints);
         }
     }
 
     @Override
     public void listChildPoints() {
-        children.forEach((name, child) -> System.out.println(child));
+        children.forEach((name, child) -> {
+            calculatePointsForChild(name);
+            System.out.println(child);
+        });
     }
 }
