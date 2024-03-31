@@ -1,16 +1,17 @@
-package hu.jakab;
+package hu.jakab.favourObjectComposition;
 
-public class StudyingTask implements Task {
+public class TaskDetails {
     private String name;
     private String description;
     private int points;
 
-    public StudyingTask(String name, String description, int points) {
+    public TaskDetails(String name, String description, int points) {
         this.name = name;
         this.description = description;
         this.points = points;
     }
 
+    // Getterek és Setterek
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getDescription() { return description; }
@@ -20,15 +21,12 @@ public class StudyingTask implements Task {
 
     @Override
     public String toString() {
-        return "StudyingTask{" +
-               "name='" + name + '\'' +
+        return "name='" + name + '\'' +
                ", description='" + description + '\'' +
-               ", points=" + points +
-               '}';
-    }
-
-    @Override
-    public void performTask() {
-        System.out.println("A " + name + " elvégezve!");
+               ", points=" + points;
     }
 }
+
+
+
+// Implementálás a HouseHoldTask számára, mint példa

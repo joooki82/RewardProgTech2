@@ -1,11 +1,11 @@
-package hu.jakab;
+package hu.jakab.programToInterface;
 
-public class SportTask implements Task {
+public class StudyingTask implements Task {
     private String name;
     private String description;
     private int points;
 
-    public SportTask(String name, String description, int points) {
+    public StudyingTask(String name, String description, int points) {
         this.name = name;
         this.description = description;
         this.points = points;
@@ -20,7 +20,7 @@ public class SportTask implements Task {
 
     @Override
     public String toString() {
-        return "SportTask{" +
+        return "StudyingTask{" +
                "name='" + name + '\'' +
                ", description='" + description + '\'' +
                ", points=" + points +

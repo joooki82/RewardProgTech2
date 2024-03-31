@@ -1,4 +1,6 @@
-package hu.jakab;
+package hu.jakab.favourObjectComposition;
+
+import hu.jakab.Child;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +29,7 @@ public class RewardManager implements IRewardManager {
 
     @Override
     public void addTask(Task task) {
-        tasks.put(task.getName(), task);
+        tasks.put(task.getTaskDetails().getName(), task);
     }
 
     @Override
@@ -43,7 +45,7 @@ public class RewardManager implements IRewardManager {
         Child child = children.get(childName);
         if (child != null) {
             int totalPoints = assignedTasks.getOrDefault(child, new ArrayList<>()).stream()
-                    .mapToInt(Task::getPoints)
+                    .mapToInt(task -> task.getTaskDetails().getPoints())
                     .sum();
             child.setPoints(totalPoints);
         }

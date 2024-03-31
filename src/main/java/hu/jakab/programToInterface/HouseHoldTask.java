@@ -1,4 +1,4 @@
-package hu.jakab;
+package hu.jakab.programToInterface;
 
 public class HouseHoldTask implements Task {
     private String name;
