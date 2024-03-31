@@ -4,9 +4,9 @@ public class Child {
     private String name;
     private int points;
 
-    public Child(String name, int points) {
+    public Child(String name) {
         this.name = name;
-        this.points = points;
+        this.points = 0;
     }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
