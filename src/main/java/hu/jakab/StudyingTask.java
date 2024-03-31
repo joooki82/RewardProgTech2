@@ -1,16 +1,15 @@
 package hu.jakab;
 
-public class HouseHoldTask implements Task {
+public class StudyingTask implements Task {
     private String name;
     private String description;
     private int points;
 
-    public HouseHoldTask(String name, String description, int points) {
+    public StudyingTask(String name, String description, int points) {
         this.name = name;
         this.description = description;
         this.points = points;
     }
-
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -21,7 +20,7 @@ public class HouseHoldTask implements Task {
 
     @Override
     public String toString() {
-        return "HouseHoldTask{" +
+        return "StudyingTask{" +
                "name='" + name + '\'' +
                ", description='" + description + '\'' +
                ", points=" + points +
