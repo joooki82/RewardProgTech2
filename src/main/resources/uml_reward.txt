@@ -1,0 +1,87 @@
+@startuml
+package hu.jakab.strategyDesignPattern {
+
+    interface Task {
+        +performTask(): void
+        +getPoints(): int
+        +getName(): String
+        +setPointCalculationStrategy(strategy: PointCalculationStrategy): void
+    }
+
+    abstract class BaseTask {
+        -name: String
+        -description: String
+        -points: int
+        -pointStrategy: PointCalculationStrategy
+        +BaseTask(name: String, description: String, points: int)
+        +setPointCalculationStrategy(strategy: PointCalculationStrategy): void
+        +getPoints(): int
+        +getName(): String
+        +setName(name: String): void
+        +getDescription(): String
+        +setDescription(description: String): void
+        +setPoints(points: int): void
+        +performTask(): void
+    }
+
+    BaseTask ..|> Task
+
+    class StudyingTask {
+        +StudyingTask(name: String, description: String, points: int)
+    }
+
+    class SportTask {
+        +SportTask(name: String, description: String, points: int)
+    }
+
+    class HouseHoldTask {
+        +HouseHoldTask(name: String, description: String, points: int)
+    }
+
+    StudyingTask --|> BaseTask
+    SportTask --|> BaseTask
+    HouseHoldTask --|> BaseTask
+
+    interface PointCalculationStrategy {
+        +calculatePoints(basePoints: int): int
+    }
+
+    class StandardPointStrategy {
+        +calculatePoints(basePoints: int): int
+    }
+
+    class BonusPointStrategy {
+        +calculatePoints(basePoints: int): int
+    }
+
+    StandardPointStrategy ..|> PointCalculationStrategy
+    BonusPointStrategy ..|> PointCalculationStrategy
+
+    class RewardManager {
+        -instance: RewardManager
+        -children: Map<String, Child>
+        -tasks: Map<String, Task>
+        -assignedTasks: Map<Child, List<Task>>
+        +getInstance(): RewardManager
+        +addChild(child: Child): void
+        +addTask(task: Task): void
+        +assignTaskToChild(childName: String, taskName: String): void
+        +calculatePointsForChild(childName: String): void
+        +listChildPoints(): void
+    }
+
+    interface IRewardManager {
+        +addChild(child: Child): void
+        +addTask(task: Task): void
+        +assignTaskToChild(childName: String, taskName: String): void
+        +listChildPoints(): void
+    }
+
+    RewardManager ..|> IRewardManager
+
+    BaseTask "1" -right-> "1" PointCalculationStrategy : uses >
+    RewardManager -down-> "many" Task : manages -
+    RewardManager -down-> "many" Child : manages -
+}
+
+@enduml
