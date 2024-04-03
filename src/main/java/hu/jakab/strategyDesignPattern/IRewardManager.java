@@ -1,6 +1,6 @@
 package hu.jakab.strategyDesignPattern;
 
-import hu.jakab.Child;
+import hu.jakab.prototypeDesignPattern.Child;
 
 public interface IRewardManager {
     void addChild(Child child);

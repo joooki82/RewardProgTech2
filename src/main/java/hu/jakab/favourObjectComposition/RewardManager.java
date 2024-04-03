@@ -1,6 +1,6 @@
 package hu.jakab.favourObjectComposition;
 
-import hu.jakab.Child;
+import hu.jakab.prototypeDesignPattern.Child;
 
 import java.util.ArrayList;
 import java.util.HashMap;

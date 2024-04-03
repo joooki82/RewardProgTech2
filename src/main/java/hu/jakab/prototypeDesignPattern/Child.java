@@ -1,6 +1,6 @@
-package hu.jakab;
+package hu.jakab.prototypeDesignPattern;
 
-public class Child {
+public class Child implements Cloneable{
     private String name;
     private int points;
 
@@ -19,5 +19,14 @@ public class Child {
                "name='" + name + '\'' +
                ", points=" + points +
                '}';
+    }
+
+    @Override
+    public Child clone() {
+        try {
+            return (Child) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

@@ -1,7 +1,7 @@
 package hu.jakab.factoryDesignPattern;
 
 
-import hu.jakab.Child;
+import hu.jakab.prototypeDesignPattern.Child;
 
 
 public class Main {

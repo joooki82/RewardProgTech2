@@ -1,7 +1,6 @@
 package hu.jakab.programToInterface;
 
-import hu.jakab.Child;
-import hu.jakab.programToInterface.Task;
+import hu.jakab.prototypeDesignPattern.Child;
 
 public interface IRewardManager {
     public void addChild(Child child);

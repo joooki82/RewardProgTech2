@@ -1,7 +1,6 @@
 package hu.jakab.programToInterface;
 
-import hu.jakab.Child;
-import hu.jakab.programToInterface.*;
+import hu.jakab.prototypeDesignPattern.Child;
 
 public class Main {
     public static void main(String[] args) {

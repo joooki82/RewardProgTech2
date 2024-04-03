@@ -1,7 +1,7 @@
 package hu.jakab.favourObjectComposition;
 
 
-import hu.jakab.Child;
+import hu.jakab.prototypeDesignPattern.Child;
 
 public interface IRewardManager {
     public void addChild(Child child);

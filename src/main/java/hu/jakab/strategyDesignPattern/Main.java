@@ -1,7 +1,7 @@
 package hu.jakab.strategyDesignPattern;
 
 
-import hu.jakab.Child;
+import hu.jakab.prototypeDesignPattern.Child;
 
 public class Main {
     public static void main(String[] args) {
