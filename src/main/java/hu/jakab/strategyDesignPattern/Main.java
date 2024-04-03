@@ -18,8 +18,8 @@ public class Main {
         manager.addTask(houseTask);
         manager.addTask(studyTask);
 
-        manager.assignTaskToChild("Alex", "Clean Room");
-        manager.assignTaskToChild("Alex", "Math Homework");
+        manager.assignTaskToChild("Andris", "Clean Room");
+        manager.assignTaskToChild("Andris", "Math Homework");
 
         // Calculate and list points after applying strategies
         manager.listChildPoints();
