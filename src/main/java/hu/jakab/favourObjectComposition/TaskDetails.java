@@ -11,7 +11,6 @@ public class TaskDetails {
         this.points = points;
     }
 
-    // Getterek és Setterek
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getDescription() { return description; }
@@ -26,7 +25,3 @@ public class TaskDetails {
                ", points=" + points;
     }
 }
-
-
-
-// Implementálás a HouseHoldTask számára, mint példa

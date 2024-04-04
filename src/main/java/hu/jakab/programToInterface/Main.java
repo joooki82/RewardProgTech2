@@ -18,22 +18,22 @@ public class Main {
         rewardManager.addTask(studyingTask);
 
         // Gyerekek létrehozása
-        Child child1 = new Child("Anna");
-        Child child2 = new Child("Béla");
+        Child child1 = new Child("Andris");
+        Child child2 = new Child("Ádám");
 
         // Gyerekek hozzáadása a RewardManagerhez (kézzel implementált módszerrel)
         rewardManager.addChild(child1);
         rewardManager.addChild(child2);
 
         // Feladatok hozzárendelése a gyerekekhez
-        rewardManager.assignTaskToChild("Anna", "Szoba takarítás");
-        rewardManager.assignTaskToChild("Béla", "Futás");
-        rewardManager.assignTaskToChild("Anna", "Szoba takarítás");
-        rewardManager.assignTaskToChild("Béla", "Futás");
-        rewardManager.assignTaskToChild("Anna", "Szoba takarítás");
-        rewardManager.assignTaskToChild("Béla", "Futás");
-        rewardManager.assignTaskToChild("Anna", "Szoba takarítás");
-        rewardManager.assignTaskToChild("Béla", "Futás");
+        rewardManager.assignTaskToChild("Andris", "Szoba takarítás");
+        rewardManager.assignTaskToChild("Ádám", "Futás");
+        rewardManager.assignTaskToChild("Andris", "Szoba takarítás");
+        rewardManager.assignTaskToChild("Ádám", "Futás");
+        rewardManager.assignTaskToChild("Andris", "Szoba takarítás");
+        rewardManager.assignTaskToChild("Ádám", "Futás");
+        rewardManager.assignTaskToChild("Andris", "Szoba takarítás");
+        rewardManager.assignTaskToChild("Ádám", "Futás");
 
         // A feladatok elvégzése
         householdTask.performTask();
@@ -41,8 +41,6 @@ public class Main {
         studyingTask.performTask();
 
         // Gyerekek pontszámának listázása
-        rewardManager.listChildPoints();
-        rewardManager.listChildPoints();
         rewardManager.listChildPoints();
 
     }

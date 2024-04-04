@@ -5,7 +5,7 @@ import hu.jakab.prototypeDesignPattern.Child;
 
 public class Main {
     public static void main(String[] args) {
-        Child child = new Child("Alex");
+        Child child = new Child("Andris");
 
         Task houseTask = new HouseHoldTask("Clean Room", "Clean your room thoroughly", 10);
         Task studyTask = new StudyingTask("Math Homework", "Complete all math exercises", 20);

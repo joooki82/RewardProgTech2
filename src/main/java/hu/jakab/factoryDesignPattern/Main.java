@@ -11,7 +11,7 @@ public class Main {
         IfTaskFactory taskFactory = new TaskFactory();
 
         // Létrehoz egy gyermeket a rendszerhez
-        Child child = new Child("Alex");
+        Child child = new Child("Andris");
 
         // Feladatok létrehozása a gyártói minta használatával
         Task houseTask = taskFactory.createTask("HouseHold", "Clean Room", "Clean your room thoroughly", 10);
@@ -27,9 +27,9 @@ public class Main {
         manager.addTask(sportTask);
 
         // A feladatok hozzárendelése a gyermekhez
-        manager.assignTaskToChild("Alex", "Clean Room");
-        manager.assignTaskToChild("Alex", "Math Homework");
-        manager.assignTaskToChild("Alex", "Football");
+        manager.assignTaskToChild("Andris", "Clean Room");
+        manager.assignTaskToChild("Andris", "Math Homework");
+        manager.assignTaskToChild("Andris", "Football");
 
         // A pontok kiszámítása és a gyermek pontjainak listázása
         manager.listChildPoints();

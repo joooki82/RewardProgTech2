@@ -1,6 +1,5 @@
 package hu.jakab.favourObjectComposition;
 
-
 import hu.jakab.prototypeDesignPattern.Child;
 
 public class Main {
@@ -8,8 +7,8 @@ public class Main {
         RewardManager rewardManager = RewardManager.getInstance();
 
         // Gyerekek létrehozása és hozzáadása
-        Child child1 = new Child("Anna");
-        Child child2 = new Child("Béla");
+        Child child1 = new Child("Andris");
+        Child child2 = new Child("Ádám");
         rewardManager.addChild(child1);
         rewardManager.addChild(child2);
 
@@ -24,17 +23,17 @@ public class Main {
         rewardManager.addTask(studyingTask);
 
         // Feladatok kiosztása
-        rewardManager.assignTaskToChild("Anna", "Takarítás");
-        rewardManager.assignTaskToChild("Béla", "Futás");
-        rewardManager.assignTaskToChild("Anna", "Matek házi");
+        rewardManager.assignTaskToChild("Andris", "Takarítás");
+        rewardManager.assignTaskToChild("Ádám", "Futás");
+        rewardManager.assignTaskToChild("Andris", "Matek házi");
 
         // Gyerekek pontszámának kiírása előtt és után
         System.out.println("Pontszámok a feladatok kiosztása előtt:");
         rewardManager.listChildPoints();
 
         // Pontszámok kiszámítása
-        rewardManager.calculatePointsForChild("Anna");
-        rewardManager.calculatePointsForChild("Béla");
+        rewardManager.calculatePointsForChild("Andris");
+        rewardManager.calculatePointsForChild("Ádám");
 
         System.out.println("Pontszámok a feladatok teljesítése után:");
         rewardManager.listChildPoints();

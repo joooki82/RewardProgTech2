@@ -1,8 +1,5 @@
 import hu.jakab.prototypeDesignPattern.Child;
-import hu.jakab.strategyDesignPattern.HouseHoldTask;
-import hu.jakab.strategyDesignPattern.RewardManager;
-import hu.jakab.strategyDesignPattern.StudyingTask;
-import hu.jakab.strategyDesignPattern.Task;
+import hu.jakab.strategyDesignPattern.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -45,5 +42,22 @@ class RewardManagerTest {
         manager.assignTaskToChild("Andris", "Math Homework");
         manager.calculatePointsForChild("Andris");
         assertEquals(30, child.getPoints(), "A gyermek összpontszáma nem a várt érték több feladat hozzárendelése után.");
+    }
+
+    @Test
+    public void testCalculatePointsStandard() {
+        PointCalculationStrategy strategy = new StandardPointStrategy();
+        int basePoints = 100;
+        int calculatedPoints = strategy.calculatePoints(basePoints);
+        assertEquals(basePoints, calculatedPoints, "A kiszámított pontoknak meg kell egyeznie a StandardPointStrategy alappontjaival.");
+    }
+
+    @Test
+    public void testCalculatePointsBonus() {
+        PointCalculationStrategy strategy = new BonusPointStrategy();
+        int basePoints = 100;
+        int expectedPoints = (int) (basePoints * 2.5);
+        int calculatedPoints = strategy.calculatePoints(basePoints);
+        assertEquals(expectedPoints, calculatedPoints, "A kiszámított pontoknak a BonusPointStratégia esetében a bázispontok 2,5-tel való szorzatának kell lenniük.");
     }
 }
